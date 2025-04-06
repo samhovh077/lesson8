@@ -68,6 +68,7 @@ const useGameStore = create((set, get) => ({
 
     resetGame: () => {
         const { cards, createCard } = get()
+
         set({
             cards: createCard(cards),
             flippedCards: [],
@@ -78,8 +79,12 @@ const useGameStore = create((set, get) => ({
     },
 
     createCard: (data) => {
-        const { setTime } = get()
-        setTime()
+        const { setTime, setIsDisabled } = get()
+        setIsDisabled(true);
+        setTimeout(() => {
+            setIsDisabled(false);
+        }, 500);
+        setTime();
         return data
             .sort(() => Math.random() - 0.5)
             .map((item) => ({
