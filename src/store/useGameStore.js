@@ -40,7 +40,6 @@ const useGameStore = create(persist((set, get) => ({
 
     handleCardClick: (index) => {
 
-        
         const {
             isDisabled,
             flippedCards,
@@ -138,9 +137,9 @@ const useGameStore = create(persist((set, get) => ({
         const { setIsDisabled, setStartTime } = get();
 
         setIsDisabled(true);
-        setTimeout(() => setIsDisabled(false), 500);
-
         setStartTime();
+
+        setTimeout(() => setIsDisabled(false), 500);
 
         const generatedCards = data
             .flatMap((item) => {

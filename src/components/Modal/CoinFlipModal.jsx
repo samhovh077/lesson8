@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useGameStore from '../../store/useGameStore';
-import styles from './CoinFlipModal.module.css'; // Import the CSS Module
+import styles from './CoinFlipModal.module.css';
 
 const CoinFlipModal = () => {
     const [winner, setWinner] = useState(null);

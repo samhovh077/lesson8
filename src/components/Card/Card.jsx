@@ -1,8 +1,6 @@
-
-
 import React from 'react';
 import useGameStore from "../../store/useGameStore";
-import styles from './Card.module.css'; // Import the CSS Module
+import styles from './Card.module.css';
 
 export default function Card({ index, card }) {
     const { handleCardClick } = useGameStore();

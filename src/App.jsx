@@ -24,7 +24,6 @@ function App() {
     if (dogImages) {
       createCard(dogImages);
       setEnabled(false)
-
     }
   }, [dogImages, createCard, setEnabled, enabled])
 
@@ -34,15 +33,11 @@ function App() {
       <h1>Memory Game</h1>
       {!gameStarted ? <StartingPage /> : isLoading ? <LoadingPage /> : (
         <>
-          {cards.length === matchedCards.length && cards.length > 0 ?
-            <>
-              <GameInfo />
-            </> :
+          {cards.length === matchedCards.length && cards.length > 0 ? <GameInfo /> :
             <>
               <Board />
               <ResetGame />
             </>}
-
         </>
       )
       }

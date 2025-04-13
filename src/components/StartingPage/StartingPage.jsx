@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useGameStore from "../../store/useGameStore";
 import CoinFlipModal from "../Modal/CoinFlipModal";
-import styles from './StartingPage.module.css'; // Import the CSS Module
+import styles from './StartingPage.module.css';
 
 export default function StartingPage() {
     const [name, setName] = useState('Player 1');

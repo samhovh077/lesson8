@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LoadingPage.module.css'; // Import the CSS Module
+import styles from './LoadingPage.module.css';
 
 const LoadingPage = () => {
   return (

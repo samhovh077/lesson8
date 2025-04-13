@@ -10,7 +10,6 @@ const fetchDogs = async ({ queryKey }) => {
 }
 
 
-
 export const useDogImages = (level) => {
 
   const { enabled } = useGameStore()

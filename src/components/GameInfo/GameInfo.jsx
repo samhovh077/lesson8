@@ -1,6 +1,6 @@
 import React from 'react';
 import useGameStore from "../../store/useGameStore";
-import styles from './GameInfo.module.css'; // Import the CSS Module
+import styles from './GameInfo.module.css';
 
 export default function GameInfo() {
     const { resetGame, player1, player2 } = useGameStore();
