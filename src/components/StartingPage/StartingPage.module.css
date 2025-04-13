@@ -1,0 +1,56 @@
+/* StartingPage.module.css */
+.startContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.startContainer input[type="text"] {
+    width: 250px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.startContainer input[type="text"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.startContainer select {
+    width: 260px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.startContainer select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.startContainer button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.startContainer button:hover {
+    background-color: #45a049;
+}

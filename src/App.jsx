@@ -1,45 +1,51 @@
 import { useEffect } from 'react'
-import Board from './components/Board'
-import GameInfo from './components/GameInfo'
-import GameLevel from './components/GameLevel'
+import Board from './components/Board/Board.jsx'
+import GameInfo from './components/GameInfo/GameInfo.jsx'
+import ResetGame from './components/ResetGame/ResetGame.jsx.jsx'
 import useGameStore from './store/useGameStore'
 import { useDogImages } from './api/useDogImages'
-import LoadingPage from './components/LoadingPage'
+import LoadingPage from './components/LoadingPage/LoadingPage.jsx'
+import StartingPage from './components/StartingPage/StartingPage.jsx'
 
 function App() {
   const {
     level,
-    setCards,
-    createCard,
     matchedCards,
-    cards
+    cards,
+    gameStarted,
+    createCard,
+    setEnabled,
+    enabled
   } = useGameStore()
 
   const { data: dogImages, isLoading } = useDogImages(level)
 
   useEffect(() => {
     if (dogImages) {
-      const cardPairs = [...createCard(dogImages), ...createCard(dogImages)]
-      setCards(cardPairs)
-    }
-  }, [dogImages, createCard, setCards])
+      createCard(dogImages);
+      setEnabled(false)
 
-  if (isLoading) {
-    return <LoadingPage/>
-  }
+    }
+  }, [dogImages, createCard, setEnabled, enabled])
+
 
   return (
     <div className="app">
       <h1>Memory Game</h1>
-      {cards.length  === matchedCards.length ? 
-      <>
-        <GameInfo />
-      </> : 
-      <>
-        <Board />
-        <GameLevel />
-      </>}
+      {!gameStarted ? <StartingPage /> : isLoading ? <LoadingPage /> : (
+        <>
+          {cards.length === matchedCards.length && cards.length > 0 ?
+            <>
+              <GameInfo />
+            </> :
+            <>
+              <Board />
+              <ResetGame />
+            </>}
 
+        </>
+      )
+      }
     </div>
   )
 }
