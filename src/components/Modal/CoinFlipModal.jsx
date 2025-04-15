@@ -40,8 +40,8 @@ const CoinFlipModal = () => {
                     <div className={`${styles.side} ${styles.front}`}>{winner || player2.name}</div>
                     <div className={`${styles.side} ${styles.back}`}>{winner === player1.name ? player2.name : player1.name}</div>
                 </div>
-                {winner && <p className={styles.resultText}>{winner} will start the game!</p>}
-                {winner && <button onClick={onClose}>Play</button>}
+            <p className={styles.resultText} style={{opacity: winner ? 1 : 0}}>{`${winner} will start the game!`}</p>
+                <button  style={{opacity: winner ? 1 : 0}} onClick={onClose}>Play</button>
             </div>
         </div>
     );
