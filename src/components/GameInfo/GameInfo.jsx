@@ -1,4 +1,3 @@
-import React from 'react';
 import useGameStore from "../../store/useGameStore";
 import styles from './GameInfo.module.css';
 

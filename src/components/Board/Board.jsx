@@ -5,12 +5,16 @@ import styles from './Board.module.css'
 export default function Board() {
     const { cards, level, currentPlayer, player1 } = useGameStore()
 
-    const gridStyle =
-        level === '8'
-            ? 'repeat(4, 1fr)'
-            : level === '18'
-                ? 'repeat(6, 1fr)'
-                : 'repeat(8, 1fr)'
+    const gridStyle = (() => {
+        switch (level) {
+          case '8':
+            return 'repeat(4, 1fr)';
+          case '18':
+            return 'repeat(6, 1fr)';
+          case '32 ':
+            return 'repeat(8, 1fr)';
+        }
+      })();
 
     return (
         <div className={styles.boardContainer}>
