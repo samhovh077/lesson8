@@ -10,7 +10,6 @@ const CoinFlipModal = () => {
 
     useEffect(() => {
         if (openModal) {
-            setFlipping(false);
 
             setTimeout(() => {
                 setFlipping(true);
